@@ -1,47 +1,144 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    overflow-x: hidden;
   }
   
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #1a1a1a, #000);
+    z-index: -1;
+  }
+  
+  /* Encabezado */
   header {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
     text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #00ff88, #00b8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
     margin: 0;
   }
   
+  header p {
+    font-size: 1.2rem;
+    margin: 10px 0 0;
+  }
+  
+  /* Secciones */
   section {
-    padding: 20px;
-    margin: 20px 0;
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
-  #projects .project {
-    background: #fff;
+  section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: #00ff88;
+    margin-bottom: 20px;
+  }
+  
+  /* Experiencia y formación */
+  .job, .degree {
+    margin-bottom: 20px;
     padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
+  .job h3, .degree h3 {
+    font-size: 1.5rem;
+    color: #00b8ff;
+    margin: 0 0 10px;
+  }
+  
+  .job p, .degree p {
+    font-size: 1rem;
+    margin: 0 0 10px;
+  }
+  
+  .job ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .job ul li {
+    margin-bottom: 5px;
+  }
+  
+  /* Habilidades */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .skill-category {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .skill-category h3 {
+    font-size: 1.2rem;
+    color: #00ff88;
+    margin: 0 0 10px;
+  }
+  
+  .skill-category ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .skill-category ul li {
+    margin-bottom: 5px;
+  }
+  
+  /* Contacto */
+  #contact p {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+  
+  #contact a {
+    color: #00b8ff;
+    text-decoration: none;
+  }
+  
+  #contact a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Pie de página */
   footer {
     text-align: center;
-    padding: 10px;
-    background: #333;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    margin-top: 40px;
   }
-
-.dark-mode {
-  background-color: #333;
-  color: #fff;
-}
+  
+  footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #888;
+  }
