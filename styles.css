@@ -1,11 +1,12 @@
 /* Estilos generales */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1c1c;
+    color: #d3d3d3;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    overflow-x: hidden;
 }
 
 .container {
@@ -16,114 +17,86 @@ body {
 }
 
 h1, h2, h3 {
-    color: #2c3e50;
+    color: #b0b0b0;
 }
 
 h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    color: #dfdfdf; /* Cambia el color del texto de tu nombre a un tono grisáceo */
 }
 
 h2 {
     font-size: 2rem;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #2c3e50;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #696969;
     padding-bottom: 10px;
+    color: #a9a9a9; /* Cambia el color del texto de "Ingeniero de Visión Artificial" */
 }
 
 h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
+    color: #b0b0b0;
 }
 
 p {
     font-size: 1.1rem;
-    color: #555;
+    color: #a9a9a9;
 }
 
 ul {
     list-style-type: disc;
     margin-left: 20px;
+    color: #a9a9a9;
 }
 
 /* Header */
 header {
-    background-color: #2c3e50;
-    color: #fff;
-    padding: 20px 0;
+    background-color: #2c2c2c;
+    color: #d3d3d3;
+    padding: 10px 0; /* Reduce el padding del encabezado */
     text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 3rem;
-}
-
-header h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 300;
-}
-
-nav ul {
-    padding: 0;
+header nav ul {
     list-style: none;
+    padding: 0;
+    margin: 10px 0 0; /* Reduce el margen superior del menú de navegación */
     display: flex;
     justify-content: center;
-    gap: 20px;
 }
 
-nav ul li a {
-    color: #fff;
+header nav ul li {
+    margin: 0 10px; /* Reduce el margen entre los elementos del menú */
+}
+
+header nav ul li a {
+    color: #d3d3d3;
     text-decoration: none;
     font-weight: 500;
 }
 
-nav ul li a:hover {
+header nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Secciones */
+/* Ajustar el contenido para que no quede oculto detrás del encabezado fijo */
+body {
+    padding-top: 60px; /* Ajusta el padding-top para compensar el encabezado reducido */
+}
+
+/* Agregar margen superior a las secciones objetivo */
 section {
-    margin: 40px 0;
+    scroll-margin-top: 60px; /* Ajusta este valor según la altura del encabezado */
 }
 
-.experience-item, .education-item {
-    margin-bottom: 30px;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* Footer */
-footer {
-    background-color: #2c3e50;
-    color: #fff;
+/* Estilos para la sección de introducción */
+.intro {
     text-align: center;
-    padding: 10px 0;
-    margin-top: 40px;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.75rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
+    margin-bottom: 20px;
 }
