@@ -1,19 +1,29 @@
 /* Estilos generales */
-body {
-    font-family: 'Arial', sans-serif;
+@font-face {
+    font-family: 'FX300';
+    src: url('fonts/FX300.ttf') format('truetype');
+}
+
+html, body {
+    font-family: 'FX300', Arial, sans-serif;
     background-color: #1c1c1c;
     color: #d3d3d3;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea el contenido al inicio */
+    align-items: flex-start; /* Alinea el contenido a la izquierda */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 h1, h2, h3 {
@@ -51,52 +61,15 @@ ul {
     color: #a9a9a9;
 }
 
-/* Header */
-header {
-    background-color: #2c2c2c;
-    color: #d3d3d3;
-    padding: 10px 0; /* Reduce el padding del encabezado */
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+/* Estilos para el efecto de escritura */
+.typing {
+    white-space: pre-wrap;
+    overflow: hidden;
+    border-right: .15em solid #d3d3d3; /* Añade la barra vertical */
+    animation: blink-caret .75s step-end infinite;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0; /* Reduce el margen superior del menú de navegación */
-    display: flex;
-    justify-content: center;
-}
-
-header nav ul li {
-    margin: 0 10px; /* Reduce el margen entre los elementos del menú */
-}
-
-header nav ul li a {
-    color: #d3d3d3;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Ajustar el contenido para que no quede oculto detrás del encabezado fijo */
-body {
-    padding-top: 60px; /* Ajusta el padding-top para compensar el encabezado reducido */
-}
-
-/* Agregar margen superior a las secciones objetivo */
-section {
-    scroll-margin-top: 60px; /* Ajusta este valor según la altura del encabezado */
-}
-
-/* Estilos para la sección de introducción */
-.intro {
-    text-align: center;
-    margin-bottom: 20px;
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #d3d3d3 }
 }
