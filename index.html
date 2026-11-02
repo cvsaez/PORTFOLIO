@@ -1,32 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carlos Vicente Sáez Rufete - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carlos Vicente Sáez Rufete — Visión Artificial</title>
+<meta name="description" content="Ingeniero de Visión Artificial, ML Engineer y MLOps para Computer Vision.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f5f6f8;
+    --text: #1b1d21;
+    --muted: #5f6672;
+    --line: #e3e5e9;
+    --accent: #3d5a80;
+    --accent-soft: #e8eef5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121417;
+      --bg-soft: #1a1d22;
+      --text: #e8eaed;
+      --muted: #9aa1ac;
+      --line: #2a2e35;
+      --accent: #8fb0d6;
+      --accent-soft: #1f2a38;
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+  /* Navegación */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  h1, h2, h3, .brand { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; }
+  .brand { font-weight: 700; text-decoration: none; letter-spacing: .01em; }
+  .links { display: flex; gap: 22px; }
+  .links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; }
+  .links a:hover { color: var(--text); }
+
+  /* Portada */
+  .hero { padding: 72px 0 56px; display: grid; grid-template-columns: 180px 1fr; gap: 40px; align-items: center; }
+  .hero img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; }
+  .eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; }
+  h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.1; font-weight: 800; margin: 6px 0 14px; }
+  .lead { color: var(--muted); font-size: 18px; max-width: 58ch; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none;
+    border: 1px solid var(--line);
+  }
+  .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  @media (prefers-color-scheme: dark) { .btn.primary { color: #121417; } }
+  .btn:hover { filter: brightness(1.05); }
+
+  /* Secciones */
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 700; margin-bottom: 26px; }
+
+  /* Qué hago */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+  .card h3 { font-size: 17px; margin-bottom: 8px; }
+  .card p { color: var(--muted); font-size: 15px; }
+  .card .tags { margin-top: 14px; font-size: 13px; color: var(--accent); font-weight: 600; }
+
+  /* Experiencia */
+  .timeline { border-left: 2px solid var(--line); padding-left: 26px; }
+  .job { position: relative; padding-bottom: 30px; }
+  .job:last-child { padding-bottom: 0; }
+  .job::before {
+    content: ""; position: absolute; left: -33px; top: 7px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 0 4px var(--bg);
+  }
+  .job h3 { font-size: 18px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 2px 0 10px; }
+  .job ul { padding-left: 18px; color: var(--text); }
+  .job li { margin-bottom: 4px; }
+
+  /* Stack */
+  .stack { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 32px; }
+  .stack h3 { font-size: 15px; margin-bottom: 4px; }
+  .stack p { color: var(--muted); font-size: 15px; }
+
+  /* Formación */
+  .edu { display: grid; gap: 18px; }
+  .edu h3 { font-size: 17px; }
+  .edu p { color: var(--muted); font-size: 15px; }
+
+  /* Contacto */
+  .contact p { color: var(--muted); margin-bottom: 18px; }
+  .contact-list { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  footer { padding: 30px 0 40px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+
+  @media (max-width: 720px) {
+    .links { display: none; }
+    .hero { grid-template-columns: 1fr; padding-top: 48px; gap: 24px; }
+    .hero img { width: 128px; height: 128px; }
+    .cards { grid-template-columns: 1fr; }
+    .stack { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
-    <section class="container content typing">
-        <h1>Bienvenido a mi portafolio</h1>
-        <p>Haz clic en los enlaces de abajo para navegar por las diferentes secciones de mi portafolio.</p>
-        <nav>
-            <ul>
-                <li><a href="experience.html">Experiencia</a></li>
-                <li><a href="education.html">Datos Académicos</a></li>
-                <li><a href="skills.html">Aptitudes</a></li>
-                <li><a href="contact.html">Contacto</a></li>
-            </ul>
-        </nav>
-        <div class="intro">
-            <h1>Carlos Vicente Sáez Rufete</h1>
-            <h2>Ingeniero de Visión Artificial</h2>
-        </div>
-        <h2>Sobre mí</h2>
-        <p>
-            Graduado en Ingeniería de Sistemas de Telecomunicación, Sonido e Imagen. Sólidos conocimientos sobre tratamiento digital de imagen y procesado de la señal. Actualmente cursando un Máster de Inteligencia Artificial.
-        </p>
-    </section>
-    <script src="script.js"></script>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#inicio">Carlos Sáez</a>
+    <div class="links">
+      <a href="#que-hago">Qué hago</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#stack">Stack</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <header class="hero" id="inicio">
+    <img src="foto.jpg" alt="Foto de Carlos Vicente Sáez Rufete">
+    <div>
+      <div class="eyebrow">Visión artificial · ML · MLOps</div>
+      <h1>Carlos Vicente Sáez Rufete</h1>
+      <p class="lead">Ingeniero de Visión Artificial en AUTIS Ingenieros desde 2019, actualmente responsable de un grupo técnico. Modelos de visión llevados del entrenamiento a líneas industriales en producción.</p>
+      <div class="actions">
+        <a class="btn primary" href="CV-Carlos-Saez.pdf" download>Descargar CV</a>
+        <a class="btn" href="mailto:carvisaru@gmail.com">carvisaru@gmail.com</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="que-hago">
+    <h2>Qué hago</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Detección y clasificación</h3>
+        <p>Entrenamiento de modelos de detección de objetos y clasificadores de imagen para inspección industrial.</p>
+        <div class="tags">YOLO · PyTorch · TensorFlow</div>
+      </div>
+      <div class="card">
+        <h3>Detección de anomalías</h3>
+        <p>Detección no supervisada de defectos con EfficientAD, para inspección sin ejemplos de cada tipo de fallo.</p>
+        <div class="tags">EfficientAD · OpenCV</div>
+      </div>
+      <div class="card">
+        <h3>Despliegue y MLOps</h3>
+        <p>Exportación a ONNX, optimización con TensorRT para GPU y despliegue en Kubernetes con CI/CD.</p>
+        <div class="tags">ONNX · TensorRT · Kubernetes · GitLab CI/CD · MLflow</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <h2>Experiencia</h2>
+    <div class="timeline">
+      <div class="job">
+        <h3>Ingeniero de Visión Artificial (Responsable de grupo)</h3>
+        <div class="meta">AUTIS Ingenieros, S.L.U. · Mayo 2024 – Actualidad</div>
+        <ul>
+          <li>Entrenamiento de modelos de detección de objetos con YOLO (Ultralytics) para inspección industrial.</li>
+          <li>Modelos clasificadores de imagen y detección de anomalías no supervisada con EfficientAD.</li>
+          <li>Exportación a ONNX y optimización con TensorRT para inferencia en GPU.</li>
+          <li>Despliegue en Kubernetes y mantenimiento de pipelines CI/CD en GitLab.</li>
+          <li>Integración de los sistemas de visión en líneas industriales de alta disponibilidad.</li>
+          <li>Coordinación técnica del equipo, gestión de recursos y planificación de proyectos.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Ingeniero de Visión Artificial (Senior)</h3>
+        <div class="meta">AUTIS Ingenieros, S.L.U. · Enero 2022 – Mayo 2024</div>
+        <ul>
+          <li>Análisis del entorno industrial: repetitividad, iluminación e interferencias.</li>
+          <li>Procesamiento digital de imagen, optimización y robustecimiento del pipeline de visión.</li>
+          <li>Automatización de pruebas y validación de modelos.</li>
+          <li>Desarrollo backend y frontend de soluciones de visión artificial.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Ingeniero de Visión Artificial (Junior)</h3>
+        <div class="meta">AUTIS Ingenieros, S.L.U. · Febrero 2019 – Enero 2022</div>
+        <ul>
+          <li>Pruebas de laboratorio y análisis de hardware de visión.</li>
+          <li>Procesamiento de imagen y testeo de algoritmos.</li>
+          <li>Puestas en marcha y soporte en entorno industrial.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <h2>Stack</h2>
+    <div class="stack">
+      <div><h3>Deep Learning y visión</h3><p>PyTorch, TensorFlow, Ultralytics (YOLO), OpenCV, Scikit-learn, Scikit-image</p></div>
+      <div><h3>Despliegue</h3><p>ONNX, TensorRT, Docker, Kubernetes, GitLab CI/CD, MLflow</p></div>
+      <div><h3>Lenguajes</h3><p>Python, SQL</p></div>
+      <div><h3>Herramientas</h3><p>Git, VS Code, LabVIEW</p></div>
+    </div>
+  </section>
+
+  <section id="formacion">
+    <h2>Formación</h2>
+    <div class="edu">
+      <div><h3>Máster en Inteligencia Artificial Avanzada y Aplicada</h3><p>Universitat de València · 2024 – 2025</p></div>
+      <div><h3>Grado en Ingeniería de Telecomunicación, Sonido e Imagen</h3><p>Universitat Politècnica de València · 2014 – 2018</p></div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact">
+    <h2>Contacto</h2>
+    <p>Guardamar del Segura (Alicante). Castellano y valenciano nativo, inglés alto.</p>
+    <div class="contact-list">
+      <a class="btn primary" href="mailto:carvisaru@gmail.com">carvisaru@gmail.com</a>
+      <a class="btn" href="CV-Carlos-Saez.pdf" download>Descargar CV</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Carlos Vicente Sáez Rufete</div>
+</footer>
+
 </body>
 </html>
