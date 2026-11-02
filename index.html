@@ -93,7 +93,6 @@
 
   /* Proyectos */
   .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-  .project:first-child { grid-column: 1 / -1; background: var(--bg-soft); }
   .project { border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; }
   .project .when { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
   .project h3 { font-size: 17px; line-height: 1.3; }
@@ -228,9 +227,16 @@
       <article class="project">
         <div class="when">2020</div>
         <div class="sector">Industria</div>
-        <h3>OCR sobre vidrio y poka-yoke</h3>
-        <p>Lectura de caracteres (OCR) sobre cristales y verificación de placas integradas mediante reconocimiento de patrones.</p>
-        <div class="tags">LabVIEW · OCR · Reconocimiento de patrones</div>
+        <h3>OCR sobre vidrio</h3>
+        <p>Reconocimiento óptico de caracteres (OCR) sobre cristales.</p>
+        <div class="tags">LabVIEW · OCR</div>
+      </article>
+      <article class="project">
+        <div class="when">2020</div>
+        <div class="sector">Electrodomésticos</div>
+        <h3>Poka-yoke de conectores en placas de encimera</h3>
+        <p>Detección de la presencia o ausencia de conectores en las placas electrónicas integradas de encimeras, mediante reconocimiento de patrones.</p>
+        <div class="tags">LabVIEW · Reconocimiento de patrones · Poka-yoke</div>
       </article>
     </div>
   </section>

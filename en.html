@@ -93,7 +93,6 @@
 
   /* Proyectos */
   .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-  .project:first-child { grid-column: 1 / -1; background: var(--bg-soft); }
   .project { border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; }
   .project .when { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
   .project h3 { font-size: 17px; line-height: 1.3; }
@@ -228,9 +227,16 @@
       <article class="project">
         <div class="when">2020</div>
         <div class="sector">Industry</div>
-        <h3>OCR on glass and poka-yoke</h3>
-        <p>Optical character recognition (OCR) on glass and verification of integrated boards using pattern recognition.</p>
-        <div class="tags">LabVIEW · OCR · Pattern recognition</div>
+        <h3>OCR on glass</h3>
+        <p>Optical character recognition (OCR) on glass.</p>
+        <div class="tags">LabVIEW · OCR</div>
+      </article>
+      <article class="project">
+        <div class="when">2020</div>
+        <div class="sector">Home appliances</div>
+        <h3>Connector poka-yoke on cooktop boards</h3>
+        <p>Detection of whether connectors are present on the integrated electronic boards of cooktops, using pattern recognition.</p>
+        <div class="tags">LabVIEW · Pattern recognition · Poka-yoke</div>
       </article>
     </div>
   </section>
