@@ -94,11 +94,10 @@
   /* Proyectos */
   .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
   .project { border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; }
-  .project .when { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
   .project h3 { font-size: 17px; line-height: 1.3; }
-  .project .sector { font-size: 13px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .05em; }
+  .project .sector { font-size: 13px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .05em; font-variant-numeric: tabular-nums; }
   .project p { color: var(--muted); font-size: 15px; }
-  .project .tags { margin-top: auto; padding-top: 6px; font-size: 13px; color: var(--text); font-weight: 600; }
+  .project .tags { margin-top: auto; padding-top: 6px; font-size: 13px; line-height: 1.5; color: var(--text); font-weight: 600; }
   @media (max-width: 720px) { .projects { grid-template-columns: 1fr; } }
 
   /* Experiencia */
@@ -198,45 +197,52 @@
     <h2>Proyectos</h2>
     <div class="projects">
       <article class="project">
-        <div class="when">2025 – actualidad</div>
-        <div class="sector">Industria</div>
-        <h3>Detección de defectos en superficies con YOLO</h3>
+        <div class="sector">2025 – actualidad · Industria</div>
+        <h3>Detección de objetos con YOLO</h3>
         <p>Fine-tuning de modelos YOLO para detectar defectos en superficies, con entrenamiento en Docker y Kubernetes. Para la puesta en producción, el modelo se convierte a un motor TensorRT (.engine) y la inferencia en GPU se integra mediante una DLL.</p>
         <div class="tags">YOLO · TensorRT · Python · Docker · Kubernetes · GitLab</div>
       </article>
       <article class="project">
-        <div class="when">2021 – actualidad</div>
         <div class="sector">Automoción</div>
-        <h3>Inspección de defectos de pintura</h3>
-        <p>Sistemas de visión para detectar defectos de pintura en carrocerías, en tres instalaciones, y un sistema robotizado para la inspección de parachoques.</p>
-        <div class="tags">LabVIEW · Visión industrial · Robótica</div>
+        <h3>Clasificación de defectos de pintura</h3>
+        <p>Filtrado y clasificación de los defectos de pintura detectados: entrenamiento de modelos de filtrado y de clasificación y su puesta en producción.</p>
+        <div class="tags">Python · TensorFlow · Scikit-learn · Modelos de clasificación · Modelos de filtrado · Kubernetes · Docker · TensorRT · SQL</div>
       </article>
       <article class="project">
-        <div class="when">2019 – 2021</div>
-        <div class="sector">Automoción</div>
-        <h3>Guiado de robots con visión 3D</h3>
-        <p>Guiado de robots a partir de nubes de puntos de cámaras estéreo 3D, con registro de la pieza mediante ICP (Iterative Closest Point). Aplicado también a un montaje de puertas robotizado con guiado en tiempo real.</p>
-        <div class="tags">Visión 3D · Nubes de puntos · ICP · Ensenso</div>
+        <div class="sector">2023 – actualidad · Automoción</div>
+        <h3>Inspección robotizada de defectos de pintura</h3>
+        <p>Puesta en marcha de sistemas robotizados de detección de defectos de pintura en piezas plásticas.</p>
+        <div class="tags">Robótica · Visión industrial · LabVIEW</div>
       </article>
       <article class="project">
-        <div class="sector">Electrodomésticos</div>
-        <h3>Detección de tornillos en atornillado</h3>
-        <p>Detección de tornillos en lavadoras mediante búsqueda de patrones y visión tradicional, dentro de proyectos de atornillado.</p>
-        <div class="tags">Búsqueda de patrones · Visión tradicional</div>
+        <div class="sector">2019 – 2021 · Automoción</div>
+        <h3>Corrección de trayectorias de robots con visión 3D</h3>
+        <p>Corrección de trayectorias de robots a partir de nubes de puntos de cámaras estéreo, con registro de la pieza mediante ICP (Iterative Closest Point). Aplicado también a un montaje de puertas robotizado con guiado en tiempo real.</p>
+        <div class="tags">Visión estéreo · Nubes de puntos · ICP · C++</div>
       </article>
       <article class="project">
-        <div class="when">2020</div>
+        <div class="sector">2021 – 2023 · Automoción</div>
+        <h3>Sistemas de inspección de defectos de pintura</h3>
+        <p>Puesta en marcha de sistemas de detección de defectos de pintura en carrocerías.</p>
+        <div class="tags">Puesta en marcha · Visión industrial · LabVIEW</div>
+      </article>
+      <article class="project">
         <div class="sector">Industria</div>
+        <h3>Atornillado de lavadoras</h3>
+        <p>Detección de tornillos en lavadoras para proyectos de atornillado, mediante detección de patrones y visión tradicional.</p>
+        <div class="tags">Selección de hardware · LabVIEW · Detección de patrones · Visión tradicional</div>
+      </article>
+      <article class="project">
+        <div class="sector">2020 · Industria</div>
         <h3>OCR sobre vidrio</h3>
         <p>Reconocimiento óptico de caracteres (OCR) sobre cristales.</p>
-        <div class="tags">LabVIEW · OCR</div>
+        <div class="tags">Selección de hardware · LabVIEW · OCR · Visión tradicional</div>
       </article>
       <article class="project">
-        <div class="when">2020</div>
-        <div class="sector">Electrodomésticos</div>
+        <div class="sector">2020 · Industria</div>
         <h3>Poka-yoke de conectores en placas de encimera</h3>
-        <p>Detección de la presencia o ausencia de conectores en las placas electrónicas integradas de encimeras, mediante reconocimiento de patrones.</p>
-        <div class="tags">LabVIEW · Reconocimiento de patrones · Poka-yoke</div>
+        <p>Detección de la presencia o ausencia de conectores en las placas electrónicas integradas de encimeras.</p>
+        <div class="tags">Selección de hardware · LabVIEW · Detección de patrones · Visión tradicional</div>
       </article>
     </div>
   </section>

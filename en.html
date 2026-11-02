@@ -94,11 +94,10 @@
   /* Proyectos */
   .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
   .project { border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; }
-  .project .when { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
   .project h3 { font-size: 17px; line-height: 1.3; }
-  .project .sector { font-size: 13px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .05em; }
+  .project .sector { font-size: 13px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .05em; font-variant-numeric: tabular-nums; }
   .project p { color: var(--muted); font-size: 15px; }
-  .project .tags { margin-top: auto; padding-top: 6px; font-size: 13px; color: var(--text); font-weight: 600; }
+  .project .tags { margin-top: auto; padding-top: 6px; font-size: 13px; line-height: 1.5; color: var(--text); font-weight: 600; }
   @media (max-width: 720px) { .projects { grid-template-columns: 1fr; } }
 
   /* Experiencia */
@@ -198,45 +197,52 @@
     <h2>Projects</h2>
     <div class="projects">
       <article class="project">
-        <div class="when">2025 – present</div>
-        <div class="sector">Industry</div>
-        <h3>Surface defect detection with YOLO</h3>
+        <div class="sector">2025 – present · Industry</div>
+        <h3>Object detection with YOLO</h3>
         <p>Fine-tuning of YOLO models to detect surface defects, with training on Docker and Kubernetes. For production, the model is converted into a TensorRT engine (.engine) and GPU inference is integrated through a DLL.</p>
         <div class="tags">YOLO · TensorRT · Python · Docker · Kubernetes · GitLab</div>
       </article>
       <article class="project">
-        <div class="when">2021 – present</div>
         <div class="sector">Automotive</div>
-        <h3>Paint defect inspection</h3>
-        <p>Vision systems to detect paint defects on car bodies, across three installations, and a robotic system for bumper inspection.</p>
-        <div class="tags">LabVIEW · Industrial vision · Robotics</div>
+        <h3>Paint defect classification</h3>
+        <p>Filtering and classification of detected paint defects: training of filtering and classification models and putting them into production.</p>
+        <div class="tags">Python · TensorFlow · Scikit-learn · Classification models · Filtering models · Kubernetes · Docker · TensorRT · SQL</div>
       </article>
       <article class="project">
-        <div class="when">2019 – 2021</div>
-        <div class="sector">Automotive</div>
-        <h3>3D vision robot guidance</h3>
-        <p>Robot guidance from 3D stereo camera point clouds, with part registration using ICP (Iterative Closest Point). Also applied to robotic door assembly with real-time guidance.</p>
-        <div class="tags">3D vision · Point clouds · ICP · Ensenso</div>
+        <div class="sector">2023 – present · Automotive</div>
+        <h3>Robotic paint defect inspection</h3>
+        <p>Commissioning of robotic systems that detect paint defects on plastic parts.</p>
+        <div class="tags">Robotics · Industrial vision · LabVIEW</div>
       </article>
       <article class="project">
-        <div class="sector">Home appliances</div>
-        <h3>Screw detection for screwdriving</h3>
-        <p>Detection of screws on washing machines using pattern matching and traditional computer vision, as part of screwdriving projects.</p>
-        <div class="tags">Pattern matching · Traditional vision</div>
+        <div class="sector">2019 – 2021 · Automotive</div>
+        <h3>Robot path correction with 3D vision</h3>
+        <p>Correction of robot paths from stereo camera point clouds, with part registration using ICP (Iterative Closest Point). Also applied to robotic door assembly with real-time guidance.</p>
+        <div class="tags">Stereo vision · Point clouds · ICP · C++</div>
       </article>
       <article class="project">
-        <div class="when">2020</div>
+        <div class="sector">2021 – 2023 · Automotive</div>
+        <h3>Paint defect inspection systems</h3>
+        <p>Commissioning of systems that detect paint defects on car bodies.</p>
+        <div class="tags">Commissioning · Industrial vision · LabVIEW</div>
+      </article>
+      <article class="project">
         <div class="sector">Industry</div>
+        <h3>Washing machine screwdriving</h3>
+        <p>Detection of screws on washing machines for screwdriving projects, using pattern matching and traditional computer vision.</p>
+        <div class="tags">Hardware selection · LabVIEW · Pattern matching · Traditional vision</div>
+      </article>
+      <article class="project">
+        <div class="sector">2020 · Industry</div>
         <h3>OCR on glass</h3>
         <p>Optical character recognition (OCR) on glass.</p>
-        <div class="tags">LabVIEW · OCR</div>
+        <div class="tags">Hardware selection · LabVIEW · OCR · Traditional vision</div>
       </article>
       <article class="project">
-        <div class="when">2020</div>
-        <div class="sector">Home appliances</div>
+        <div class="sector">2020 · Industry</div>
         <h3>Connector poka-yoke on cooktop boards</h3>
-        <p>Detection of whether connectors are present on the integrated electronic boards of cooktops, using pattern recognition.</p>
-        <div class="tags">LabVIEW · Pattern recognition · Poka-yoke</div>
+        <p>Detection of whether connectors are present on the integrated electronic boards of cooktops.</p>
+        <div class="tags">Hardware selection · LabVIEW · Pattern matching · Traditional vision</div>
       </article>
     </div>
   </section>
