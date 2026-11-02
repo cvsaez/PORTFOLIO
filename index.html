@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Carlos Vicente Sáez Rufete — Visión Artificial</title>
 <meta name="description" content="Ingeniero de Visión Artificial, ML Engineer y MLOps para Computer Vision.">
+<link rel="alternate" hreflang="es" href="https://cvsaez.github.io/PORTFOLIO/">
+<link rel="alternate" hreflang="en" href="https://cvsaez.github.io/PORTFOLIO/en.html">
+<link rel="alternate" hreflang="ca" href="https://cvsaez.github.io/PORTFOLIO/va.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -56,6 +59,11 @@
   .links { display: flex; gap: 22px; }
   .links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; }
   .links a:hover { color: var(--text); }
+
+  .lang { display: flex; gap: 4px; margin-left: 18px; font-size: 13px; font-weight: 600; }
+  .lang a { text-decoration: none; color: var(--muted); padding: 3px 7px; border-radius: 6px; }
+  .lang a[aria-current="true"] { color: var(--text); background: var(--bg-soft); }
+  nav .right { display: flex; align-items: center; }
 
   /* Portada */
   .hero { padding: 72px 0 56px; display: grid; grid-template-columns: 180px 1fr; gap: 40px; align-items: center; }
@@ -128,11 +136,14 @@
 <nav>
   <div class="wrap">
     <a class="brand" href="#inicio">Carlos Sáez</a>
-    <div class="links">
-      <a href="#que-hago">Qué hago</a>
-      <a href="#experiencia">Experiencia</a>
-      <a href="#stack">Stack</a>
-      <a href="#contacto">Contacto</a>
+    <div class="right">
+      <div class="links">
+        <a href="#que-hago">Qué hago</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#stack">Stack</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="lang"><a href="index.html" lang="es" aria-current="true">ES</a><a href="en.html" lang="en">EN</a><a href="va.html" lang="ca">VA</a></div>
     </div>
   </div>
 </nav>
