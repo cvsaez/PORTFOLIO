@@ -91,6 +91,17 @@
   .card p { color: var(--muted); font-size: 15px; }
   .card .tags { margin-top: 14px; font-size: 13px; color: var(--accent); font-weight: 600; }
 
+  /* Proyectos */
+  .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .project:first-child { grid-column: 1 / -1; background: var(--bg-soft); }
+  .project { border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; }
+  .project .when { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .project h3 { font-size: 17px; line-height: 1.3; }
+  .project .sector { font-size: 13px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .05em; }
+  .project p { color: var(--muted); font-size: 15px; }
+  .project .tags { margin-top: auto; padding-top: 6px; font-size: 13px; color: var(--text); font-weight: 600; }
+  @media (max-width: 720px) { .projects { grid-template-columns: 1fr; } }
+
   /* Experiencia */
   .timeline { border-left: 2px solid var(--line); padding-left: 26px; }
   .job { position: relative; padding-bottom: 30px; }
@@ -138,6 +149,7 @@
     <div class="right">
       <div class="links">
         <a href="#que-hago">What I do</a>
+        <a href="#proyectos">Projects</a>
         <a href="#experiencia">Experience</a>
         <a href="#stack">Stack</a>
         <a href="#contacto">Contact</a>
@@ -180,6 +192,46 @@
         <p>ONNX export, TensorRT optimisation for GPU and deployment on Kubernetes with CI/CD.</p>
         <div class="tags">ONNX · TensorRT · Kubernetes · GitLab CI/CD · MLflow</div>
       </div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <h2>Projects</h2>
+    <div class="projects">
+      <article class="project">
+        <div class="when">2025 – present</div>
+        <div class="sector">Industry</div>
+        <h3>Surface defect detection with YOLO</h3>
+        <p>Fine-tuning of YOLO models to detect surface defects. GPU-accelerated inference with TensorRT, deployed with Docker and Kubernetes and CI/CD in GitLab.</p>
+        <div class="tags">YOLO · TensorRT · Python · Docker · Kubernetes · GitLab CI/CD</div>
+      </article>
+      <article class="project">
+        <div class="when">2021 – present</div>
+        <div class="sector">Automotive</div>
+        <h3>Paint defect inspection</h3>
+        <p>Vision systems to detect paint defects on car bodies, across three installations, and a robotic system for bumper inspection.</p>
+        <div class="tags">LabVIEW · Industrial vision · Robotics</div>
+      </article>
+      <article class="project">
+        <div class="when">2019 – 2021</div>
+        <div class="sector">Automotive</div>
+        <h3>3D vision robot guidance</h3>
+        <p>Robot guidance from 3D stereo camera point clouds, with part registration using ICP (Iterative Closest Point). Also applied to robotic door assembly with real-time guidance.</p>
+        <div class="tags">3D vision · Point clouds · ICP · Ensenso</div>
+      </article>
+      <article class="project">
+        <div class="sector">Home appliances</div>
+        <h3>Screw detection for screwdriving</h3>
+        <p>Detection of screws on washing machines using pattern matching and traditional computer vision, as part of screwdriving projects.</p>
+        <div class="tags">Pattern matching · Traditional vision</div>
+      </article>
+      <article class="project">
+        <div class="when">2020</div>
+        <div class="sector">Industry</div>
+        <h3>OCR on glass and poka-yoke</h3>
+        <p>Optical character recognition (OCR) on glass and verification of integrated boards using pattern recognition.</p>
+        <div class="tags">LabVIEW · OCR · Pattern recognition</div>
+      </article>
     </div>
   </section>
 
